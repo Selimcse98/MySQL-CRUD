@@ -51,10 +51,14 @@ public class ViewAllEmployee extends AppCompatActivity implements ListView.OnIte
                 JSONObject jo = result.getJSONObject(i);
                 String id = jo.getString(Config.TAG_ID);
                 String name = jo.getString(Config.TAG_NAME);
+                String designation = jo.getString(Config.TAG_DESG);
+                String salary = jo.getString(Config.TAG_SAL);
 
                 HashMap<String,String> employees = new HashMap<>();
                 employees.put(Config.TAG_ID,id);
                 employees.put(Config.TAG_NAME,name);
+                employees.put(Config.TAG_DESG,designation);
+                employees.put(Config.TAG_SAL,salary);
                 list.add(employees);
             }
 
@@ -64,8 +68,8 @@ public class ViewAllEmployee extends AppCompatActivity implements ListView.OnIte
 
         ListAdapter adapter = new SimpleAdapter(
                 ViewAllEmployee.this, list, R.layout.list_item,
-                new String[]{Config.TAG_ID,Config.TAG_NAME},
-                new int[]{R.id.id, R.id.name});
+                new String[]{Config.TAG_ID,Config.TAG_NAME,Config.TAG_DESG,Config.TAG_SAL},
+                new int[]{R.id.id, R.id.name,R.id.desg,R.id.salary});
 
         listView.setAdapter(adapter);
     }
