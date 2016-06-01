@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         final String desg = editTextDesg.getText().toString().trim();
         final String sal = editTextSal.getText().toString().trim();
 
-        class AddEmployee extends AsyncTask<Void,Void,String>{
+        class AddEmployees extends AsyncTask<Void,Void,String>{
 
             ProgressDialog loading;
 
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         }
 
-        AddEmployee ae = new AddEmployee();
+        AddEmployees ae = new AddEmployees();
         ae.execute();
     }
 

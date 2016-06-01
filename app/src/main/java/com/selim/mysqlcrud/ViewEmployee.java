@@ -192,7 +192,7 @@ public class ViewEmployee extends AppCompatActivity implements View.OnClickListe
                 new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface arg0, int arg1) {
-
+                        Toast.makeText(ViewEmployee.this, "Hudai Delete press korchos ken?",Toast.LENGTH_LONG).show();
                     }
                 });
 
